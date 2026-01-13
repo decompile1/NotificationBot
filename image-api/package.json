@@ -14,7 +14,7 @@
     "@stylistic/eslint-plugin": "^5.5.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.3.0",
-    "hono": "^4.10.3",
+    "hono": "^4.11.4",
     "path": "^0.12.7",
     "sharp": "^0.34.4",
     "tsc-alias": "^1.8.16",
