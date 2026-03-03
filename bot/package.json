@@ -14,7 +14,7 @@
     "@dotenvx/dotenvx": "^1.51.0",
     "@nekiro/kick-api": "^2.1.2",
     "@stylistic/eslint-plugin": "^5.5.0",
-    "axios": "^1.12.2",
+    "axios": "^1.13.5",
     "discord-api-types": "^0.38.31",
     "discord.js": "^14.24.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
