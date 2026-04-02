@@ -92,12 +92,12 @@ Placeholders allow you to use variables that change from message to message. For
         </tr>
         <tr>
             <td><code>user.tag</code></td>
-            <td>@glitchdetected</td>
+            <td>@decompile1</td>
             <td>User tag</td>
         </tr>
         <tr>
             <td><code>user.name</code></td>
-            <td>glitchdetected</td>
+            <td>decompile1</td>
             <td>Username</td>
         </tr>
         <tr>
@@ -166,12 +166,12 @@ Placeholders allow you to use variables that change from message to message. For
         </tr>
         <tr>
             <td><code>inviter.tag</code></td>
-            <td>@glitchdetected</td>
+            <td>@decompile1</td>
             <td>User tag</td>
         </tr>
         <tr>
             <td><code>inviter.name</code></td>
-            <td>glitchdetected</td>
+            <td>decompile1</td>
             <td>Username</td>
         </tr>
         <tr>

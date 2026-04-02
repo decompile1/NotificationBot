@@ -325,7 +325,7 @@ Placeholders allow you to use variables that change from message to message. For
         </tr>
         <tr>
             <td><code>author.username</code></td>
-            <td>glitchdetected</td>
+            <td>decompile1</td>
             <td>Author username</td>
         </tr>
         <tr>
@@ -335,7 +335,7 @@ Placeholders allow you to use variables that change from message to message. For
         </tr>
         <tr>
             <td><code>author.link</code></td>
-            <td>https://reddit.com/user/glitchdetected</td>
+            <td>https://reddit.com/user/decompile1</td>
             <td>Author url</td>
         </tr>
         <tr>

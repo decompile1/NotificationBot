@@ -80,9 +80,9 @@ function FooterSocials() {
     return (
         <div className="ml-auto svg-max flex flex-wrap items-center gap-2 mt-2 md:mt-0">
             <Link
-                href="https://github.com/glitchdetected"
+                href="https://github.com/decompile1"
                 className="text-white/75 hover:text-white duration-200 size-6"
-                aria-label="GlitchDetected GitHub"
+                aria-label="Decompile1 GitHub"
             >
                 <BiLogoGithub />
             </Link>

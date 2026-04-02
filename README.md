@@ -160,7 +160,7 @@ NEXT_PUBLIC_CAPTCHA_ID=""
 - pnpm install
 - pnpm dev
 
-See the [open issues](https://github.com/GlitchDetected/notificationbot/issues) for a full list of proposed features and known issues.
+See the [open issues](https://github.com/Decompile1/notificationbot/issues) for a full list of proposed features and known issues.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -226,8 +226,8 @@ Don't forget to give the project a star!
 
 ### Top contributors:
 
-<a href="https://github.com/GlitchDetected/notificationbot/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=GlitchDetected/notificationbot" alt="contrib.rocks image" />
+<a href="https://github.com/Decompile1/notificationbot/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Decompile1/notificationbot" alt="contrib.rocks image" />
 </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -251,18 +251,18 @@ NotificationBot is licensed under the `GNU GENERAL PUBLIC LICENSE v3.0`. See `li
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=glitchdetected/notificationbot&type=date&legend=top-left)](https://www.star-history.com/#glitchdetected/notificationbot&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=decompile1/notificationbot&type=date&legend=top-left)](https://www.star-history.com/#decompile1/notificationbot&type=date&legend=top-left)
 
-[contributors-shield]: https://img.shields.io/github/contributors/GlitchDetected/notificationbot.svg?style=for-the-badge
-[contributors-url]: https://github.com/GlitchDetected/notificationbot/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/GlitchDetected/notificationbot.svg?style=for-the-badge
-[forks-url]: https://github.com/GlitchDetected/notificationbot/network/members
-[stars-shield]: https://img.shields.io/github/stars/GlitchDetected/notificationbot.svg?style=for-the-badge
-[stars-url]: https://github.com/GlitchDetected/notificationbot/stargazers
-[issues-shield]: https://img.shields.io/github/issues/GlitchDetected/notificationbot.svg?style=for-the-badge
-[issues-url]: https://github.com/GlitchDetected/notificationbot/issues
-[license-shield]: https://img.shields.io/github/license/GlitchDetected/notificationbot.svg?style=for-the-badge
-[license-url]: https://github.com/GlitchDetected/notificationbot/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/Decompile1/notificationbot.svg?style=for-the-badge
+[contributors-url]: https://github.com/Decompile1/notificationbot/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Decompile1/notificationbot.svg?style=for-the-badge
+[forks-url]: https://github.com/Decompile1/notificationbot/network/members
+[stars-shield]: https://img.shields.io/github/stars/Decompile1/notificationbot.svg?style=for-the-badge
+[stars-url]: https://github.com/Decompile1/notificationbot/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Decompile1/notificationbot.svg?style=for-the-badge
+[issues-url]: https://github.com/Decompile1/notificationbot/issues
+[license-shield]: https://img.shields.io/github/license/Decompile1/notificationbot.svg?style=for-the-badge
+[license-url]: https://github.com/Decompile1/notificationbot/blob/master/LICENSE.txt
 [product-screenshot]: /screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/

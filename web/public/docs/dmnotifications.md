@@ -46,12 +46,12 @@ You can have a custom message for your notifications. For example: **New upload 
         </tr>
         <tr>
             <td><code>user.tag</code></td>
-            <td>@glitchdetected</td>
+            <td>@decompile1</td>
             <td>User tag</td>
         </tr>
         <tr>
             <td><code>user.name</code></td>
-            <td>GlitchDetected</td>
+            <td>Decompile1</td>
             <td>Username</td>
         </tr>
         <tr>

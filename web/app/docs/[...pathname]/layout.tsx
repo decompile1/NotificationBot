@@ -83,7 +83,7 @@ export default async function RootLayout({ params, children }: Props) {
                     </LinkButton>
                     <Link
                         className="flex items-center gap-1.5 hover:text-red-400 duration-100"
-                        href={"https://github.com/glitchdetected/notificationbot"}
+                        href={"https://github.com/decompile1/notificationbot"}
                         target="_blank"
                     >
                         <BsGithub /> Contribute

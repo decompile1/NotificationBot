@@ -70,8 +70,8 @@ export const generateMetadata = (): Metadata => {
             google: "notranslate"
         },
 
-        creator: "GlitchDetected",
-        publisher: "GlitchDetected",
+        creator: "Decompile1",
+        publisher: "Decompile1",
 
         robots: "index, follow"
     };
