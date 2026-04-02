@@ -79,87 +79,40 @@
   }
 }
 
-@layer base {
-  :root {
-    --blurple: 235 82% 67%;
-
-    --background: 0 60% 15%; /* dark red tone */
-    --foreground: 358, 80%, 6%;
-
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 0 60% 15%;
-    --popover-foreground: 0 70% 85%;
-
-    --primary: 0 70% 50%; /* vivid red */
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 60% 40%; /* darker red */
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 0 40% 60%; /* muted dark red */
-    --muted-foreground: 0 40% 30%;
-
-    --accent: 0 60% 80%; /* light red */
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 80% 50%; /* bright red */
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 0 40% 60%;
-    --input: 0 40% 60%;
-    --ring: 0 70% 50%; /* red */
-
-    --chart-1: 0 70% 50%;
-    --chart-2: 0 60% 45%;
-    --chart-3: 0 50% 50%;
-    --chart-4: 0 60% 60%;
-    --chart-5: 0 80% 50%;
-
-    --color-discord-gray: #1c1d23;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
+@layer base  {
+:root, .dark {
     --blurple: 235 82% 67%;
     
-    --background: 0 70% 10%;
-    --foreground: 358, 80%, 6%;
+    /* Global Dark Mode Palette */
+    --background: 210 11% 15%;    /* #212529 */
+    --foreground: 210 2% 12%; /* #1e1f20 */
 
-    --card: 0 0% 18%;
-    --card-foreground: 0 0% 100%;
+    --card: 210 10% 23%;          /* #343a40 */
+    --card-foreground: 210 17% 98%;
 
-    --popover: 0 0% 18%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 210 10% 23%;
+    --popover-foreground: 210 17% 98%;
 
-    --primary: 0 70% 50%; /* vivid red */
-    --primary-foreground: 0 0% 100%;
+    --primary: 235 30% 18%       
+    --primary-foreground: 235 30% 18%;
 
-    --secondary: 0 70% 40%; /* darker red */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 210 9% 31%;      /* #495057 */
+    --secondary-foreground: 210 17% 98%;
 
-    --muted: 0 40% 30%; /* muted red */
-    --muted-foreground: 0 0% 100%;
+    --muted: 210 8% 46%;          /* #6c757d */
+    --muted-foreground: 210 17% 98%;
 
-    --accent: 0 30% 25%; /* very dark red accent */
-    --accent-foreground: 0 0% 100%;
+    --accent: 210 11% 71%;        /* #adb5bd */
+    --accent-foreground: 210 11% 15%;
 
-    --destructive: 0 80% 40%; /* bright red */
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 17% 98%;
 
-    --border: 0 40% 30%;
-    --input: 0 40% 30%;
-    --ring: 0 70% 60%; /* red */
+    --border: 210 10% 23%;
+    --input: 210 10% 23%;
+    --ring: 210 17% 98%;
 
-    --chart-1: 0 70% 60%;
-    --chart-2: 0 70% 50%;
-    --chart-3: 0 50% 50%;
-    --chart-4: 0 60% 60%;
-    --chart-5: 0 80% 50%;
-
-    --color-discord-gray: #1c1d23;
+    --radius: 0.5rem;
   }
 }
 

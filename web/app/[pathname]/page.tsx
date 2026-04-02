@@ -12,7 +12,7 @@ export default async function Home({ params }: Props) {
 
     switch (pathname) {
         case "support":
-            return redirect("https://discord.gg/GNdJMJCBdu");
+            return redirect("https://discord.gg/fUsRWyPNha");
         case "vote":
             return redirect("https://top.gg/bot/1366507117044957276#vote" + utm);
         case "add":

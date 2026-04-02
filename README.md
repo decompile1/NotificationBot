@@ -156,9 +156,6 @@ GITHUB_TOKEN=""
 
 # https://www.geetest.com/en/ recommended for this
 NEXT_PUBLIC_CAPTCHA_ID=""
-
-SENTRY_AUTH_TOKEN=
-NEXT_PUBLIC_SENTRY_DSN=
 ```
 - pnpm install
 - pnpm dev

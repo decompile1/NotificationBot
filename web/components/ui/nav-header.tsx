@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { HiBookOpen, HiChevronDown, HiIdentification, HiLogout, HiSupport, HiTerminal } from "react-icons/hi";
+import { HiBookOpen, HiChevronDown, HiIdentification, HiLogout, HiSupport } from "react-icons/hi";
 
 import type { User } from "@/common/userStore";
 import { userStore } from "@/common/userStore";
@@ -68,7 +68,7 @@ function Dropdown({ user }: { user: User; }) {
                 <button
                     className="ml-auto truncate flex hover:bg-background py-2 px-4 rounded-lg duration-200 items-center data-[state=open]:bg-background outline-none"
                 >
-                    <Avatar className="mr-2 border-2 border-red-800 rounded-full w-7 h-7 sm:w-8 sm:h-8">
+                    <Avatar className="mr-2 border-2 border-blue-800 rounded-full w-7 h-7 sm:w-8 sm:h-8">
                         <AvatarImage
                             alt={user.username}
                             src={user.avatarHash ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatarHash}?size=96` : "/discord.webp"}
@@ -81,7 +81,7 @@ function Dropdown({ user }: { user: User; }) {
             </DropdownMenuTrigger>
             <DropdownMenuContent className='w-56 scale-120 relative top-9 right-5' align="end">
                 <DropdownMenuLabel className='flex items-center gap-3'>
-                    <Avatar className="border-2 border-red-800 rounded-full">
+                    <Avatar className="border-2 border-blue-800 rounded-full">
                         <AvatarImage
                             alt={user.username}
                             src={user.avatarHash ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatarHash}?size=96` : "/discord.webp"}
@@ -115,10 +115,6 @@ function Dropdown({ user }: { user: User; }) {
                             Documentation
                         </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem disabled>
-                        <HiTerminal />
-                        Developer API
-                    </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
@@ -126,10 +122,15 @@ function Dropdown({ user }: { user: User; }) {
                         asChild
                         className="text-red-400"
                     >
-                        <Link href="/login?logout=true" prefetch={false}>
-                            <HiLogout />
+                        <button
+                            className="w-full"
+                            onClick={() => {
+                                window.location.href = "/login?logout=true";
+                            }}
+                        >
+                            < HiLogout />
                             Logout
-                        </Link>
+                        </button>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
             </DropdownMenuContent>

@@ -129,62 +129,75 @@ async function NavBar({ className }: { className?: string; }) {
 
     const links: Linktypes[] = [
         { name: "Status", hash: "/status" },
-        { name: "Commands", hash: "/commands" },
+        { name: "Invite", hash: "/add" },
         { name: "Documentation", hash: "/docs/home" }
     ];
 
     return (
         <nav
             className={cn(
-                "fixed top-0 left-1/2 -translate-x-1/2",
-                "relative flex items-center justify-between",
-                "w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%]",
-                "h-12 sm:h-14 lg:h-16",
-                "sm:top-4 z-999",
-                "px-3 sm:px-5 md:px-8",
-                "rounded-lg sm:rounded-xl",
-                "shadow-sm shadow-gray-700/50",
-                "bg-foreground/60 backdrop-blur-md backdrop-brightness-75",
+                // 1. Position & Layout
+                "fixed top-0 left-1/2 -translate-x-1/2 z-999",
+                "flex items-center",
+                "w-[95%] sm:w-[92%] lg:w-[85%]",
+                "h-16 sm:h-20 mt-6", // Increased height and top margin
+                "px-6 md:px-10",
+                "rounded-3xl", // Larger rounding for larger bar
+
+                // 2. Glassmorphism Styles
+                "bg-black/30",
+                "backdrop-blur-2xl",
+                "backdrop-saturate-150",
+                "border border-white/10",
+
+                // 3. Shadow for depth
+                "shadow-[0_12px_40px_0_rgba(0,0,0,0.4)]",
+
                 className
             )}
         >
-
-            <div className="flex items-center gap-2">
-                <Link href="/" className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+                <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                     <Image
                         src="/bot.webp"
                         alt="Logo"
-                        width={30}
-                        height={30}
-                        className="sm:w-9 sm:h-9 md:w-10 md:h-10"
+                        width={40} // Increased logo size
+                        height={40}
+                        className="w-10 h-10 md:w-12 md:h-12"
                     />
-                    <span className="hidden xs:inline text-sm sm:text-base font-semibold tracking-wide">
-                        NotificationBot
+                    <span className="hidden xs:inline text-lg md:text-xl font-bold tracking-tight">
+                        tickets
                     </span>
                 </Link>
             </div>
 
-            <ul className="absolute left-1/2 -translate-x-1/2 flex justify-center gap-2 xs:gap-3 sm:gap-5 md:gap-6 text-[0.7rem] xs:text-[0.8rem] sm:text-[0.9rem] md:text-[1rem] font-medium">
-                {links.map((link) => (
-                    <Link
-                        key={link.hash}
-                        className={cn(
-                            "px-2 py-1 transition hover:text-red-600",
-                            link.name === "Commands" && "hidden sm:inline"
-                        )}
-                        href={link.hash}
-                    >
-                        {link.name}
-                    </Link>
-                ))}
+            <div className="flex-1" />
 
-            </ul>
+            <div className="flex items-center gap-4 md:gap-8">
+                <ul className="flex items-center gap-1 sm:gap-2">
+                    {links.map((link) => (
+                        <Link
+                            key={link.hash}
+                            className={cn(
+                                "px-4 py-2 rounded-xl transition-all duration-200",
+                                "text-sm md:text-base font-medium text-neutral-300",
+                                // Hover background instead of text color
+                                "hover:bg-white/10 hover:text-white",
+                                link.name === "Premium" && "hidden sm:inline-flex"
+                            )}
+                            href={link.hash}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                </ul>
 
-            <div className="flex ml-auto">
-                {jar.get("sessiontoken")?.value
-                    ? <ProfileHeader/>
-                    : <LoginButton className="ml-auto text-sm sm:text-base" />
-                }
+                <div className="flex items-center border-l border-white/10 pl-4 md:pl-8">
+                    {jar.get("sessiontoken")?.value
+                        ? <ProfileHeader/>
+                        : <LoginButton className="text-sm sm:text-base" />
+                    }
+                </div>
             </div>
         </nav>
     );

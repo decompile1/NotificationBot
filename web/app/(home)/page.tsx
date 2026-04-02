@@ -567,20 +567,6 @@ export default async function Home() {
                 </div>
             </div>
 
-
-            <div className="w-full flex justify-center mb-12">
-                <div className="bg-red-600 rounded-full h-16 w-16 flex items-center justify-center">
-                    <HiChartBar className="h-8 w-8 text-white" />
-                </div>
-            </div>
-
-            <div className="text-center mb-16 px-4">
-                <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-red-900 to-red-500">
-                    Highly trusted by server owners & staff
-                </h2>
-                <p className="mt-4 text-sm sm:text-md text-gray-400">Reliability is the #1 priority</p>
-            </div>
-
             <div className="mb-24 w-full px-4">
                 <Reviews />
             </div>
@@ -588,8 +574,6 @@ export default async function Home() {
             <div className="mb-24 w-full px-4">
                 <Faq />
             </div>
-
-            <ScrollToTopButton />
         </div>
     );
 }
