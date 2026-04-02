@@ -28,10 +28,10 @@
 ## Structure
 | Path                    | Description        |
 | ----------------------- | ------------------ |
-| `./api`             | API for the NotificationBot dashboard |
+| `./api`                 | API for the NotificationBot dashboard |
 | `./bot`                 | Codebase for the Discord bot |
 | `./web`                 | Notification bot dashboard |
-
+| `./image-api`           | Image api |
 ---
 
 **Fill in the environment variables before running gateway and web. All data is stored in a Postgresql database and synchronised w/ `./gateway`.**
@@ -66,6 +66,7 @@
 ## Setup
 > [!IMPORTANT]  
 > Open a new issue if you find any bugs
+
 Prerequisites: 
 - Node.js @ https://nodejs.org/en/download
 - npm install -g pnpm
@@ -237,7 +238,7 @@ Don't forget to give the project a star!
 <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">
   <img align="right" height="72" alt="GNU GENERAL PUBLIC LICENSE v3.0" src="doc/GPLv3_Logo.png" />
 </a>
-NotificationBot is licensed under the `GNU GENERAL PUBLIC LICENSE v3.0`. See `license.txt` for more information.
+NotificationBot is licensed under the GNU GENERAL PUBLIC LICENSE v3.0. See LICENSE for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
