@@ -1,1 +1,0 @@
-export const intl = new Intl.NumberFormat("en", { notation: "standard" });

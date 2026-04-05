@@ -1,7 +1,0 @@
-services:
-  notificationbot:
-    build: .
-    container_name: notificationbot
-    env_file:
-      - .env
-    restart: unless-stopped

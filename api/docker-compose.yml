@@ -1,9 +1,0 @@
-services:
-  tts:
-    container_name: notificationbot-api
-    build: .
-    restart: unless-stopped
-    env_file:
-      - .env
-    ports:
-      - "9001:3001"

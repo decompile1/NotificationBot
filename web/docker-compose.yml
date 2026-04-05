@@ -1,9 +1,0 @@
-services:
-  tts:
-    container_name: notificationbot-web
-    build: .
-    env_file:
-      - .env
-    restart: unless-stopped
-    ports:
-      - "9000:3000"
