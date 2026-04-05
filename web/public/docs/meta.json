@@ -1,0 +1,70 @@
+{
+  "pages": [
+    {
+      "name": "🏠︎ Home",
+      "file": "home.md",
+      "description": "Main page of the NotificationBot documentation!"
+    },
+    {
+      "name": "🔔 DM Notifications",
+      "file": "dmnotifications.md",
+      "image": "/doc-assets/open-graph/notifications-youtube.webp",
+      "description": "Notifications sent directly to your direct messages",
+      "permissions": {
+        "bot": ["Mutual server w/ bot", "DMs enabled", "Bot is not blocked"],
+        "user": ["DMs enabled"]
+      }
+    },
+    {
+            "name": "📢 Notifications",
+            "file": "notifications.md",
+            "image": "/doc-assets/open-graph/notifications-youtube.webp",
+            "description": "Notify your community from your favorite socials like YouTube, Twitch, Bluesky or Reddit",
+            "permissions": {
+                "bot": [
+                    "View Channel",
+                    "Send Messages",
+                    "Embed Links",
+                    "Mention Everyone"
+                ],
+                "user": [
+                    "Manage Server"
+                ]
+            }
+        },
+               {
+            "name": "👋 Welcome",
+            "file": "welcome.md",
+            "image": "/doc-assets/open-graph/welcome.png",
+            "description": "Automatic welcoming and leaving notifications",
+            "permissions": {
+                "bot": [
+                    "View Channel",
+                    "Send Messages",
+                    "Embed Links",
+                    "Attach Files"
+                ],
+                "user": [
+                    "Manage Server"
+                ]
+            }
+        },
+                       {
+            "name": "🍂 Goodbye",
+            "file": "goodbye.md",
+            "image": "/doc-assets/open-graph/goodbye.png",
+            "description": "Automatic welcoming and leaving notifications",
+            "permissions": {
+                "bot": [
+                    "View Channel",
+                    "Send Messages",
+                    "Embed Links",
+                    "Attach Files"
+                ],
+                "user": [
+                    "Manage Server"
+                ]
+            }
+        }
+  ]
+}

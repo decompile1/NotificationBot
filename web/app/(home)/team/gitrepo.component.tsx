@@ -1,0 +1,68 @@
+import Link from "next/link";
+import { HiBeaker, HiExternalLink, HiLockClosed, HiStar } from "react-icons/hi";
+
+import { Badge } from "@/components/ui/badge";
+import { getRepository } from "@/lib/github";
+import { cn } from "@/utils/cn";
+
+export async function Repository({
+    fullname
+}: {
+    fullname: string;
+}) {
+    const repo = await getRepository(fullname);
+
+    if (!repo || !repo.html_url) {
+        console.warn(`[Repository] ${fullname} appears to be private or missing`, repo);
+
+        return (
+            <div
+                className={cn(
+                    "flex items-center gap-3 p-4 bg-foreground/50 rounded-xl text-neutral-400",
+                    "border border-neutral-800"
+                )}
+            >
+                <HiLockClosed className="w-5 h-5 text-neutral-500" />
+                <span className="text-sm">
+                    Repository <strong>{fullname}</strong> is closed source as of now
+                </span>
+            </div>
+        );
+    }
+
+    return (
+        <Link
+            className={cn(
+                "flex items-center gap-3 p-4 bg-foreground rounded-xl cursor-default",
+                "duration-100 outline-red-500 hover:outline cursor-pointer"
+            )}
+            href={repo.html_url}
+            target="_blank"
+        >
+            <div>
+                <div className="flex items-center gap-2">
+                    <span className="text-lg text-neutral-200 font-medium -mb-0.5">
+                        {repo.full_name}
+                    </span>
+                    <Badge
+                        variant="flat"
+                        radius="rounded"
+                    >
+                        <HiStar />
+                        {repo.stargazers_count}
+                    </Badge>
+                    <Badge
+                        variant="flat"
+                        radius="rounded"
+                    >
+                        <HiBeaker />
+                        {repo.language}
+                    </Badge>
+                </div>
+                <span className="opacity-75">{repo.description}</span>
+            </div>
+
+            <HiExternalLink className="ml-auto w-5 h-5" />
+        </Link>
+    );
+}

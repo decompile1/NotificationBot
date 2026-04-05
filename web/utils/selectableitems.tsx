@@ -1,0 +1,91 @@
+import { ChannelType } from "discord-api-types/v10";
+import Image from "next/image";
+import { HiAtSymbol, HiHashtag, HiMenuAlt2, HiNewspaper, HiVolumeUp } from "react-icons/hi";
+
+import {
+    type ApiV1GuildsChannelsGetResponse,
+    type ApiV1GuildsEmojisGetResponse,
+    type ApiV1GuildsRolesGetResponse,
+    PermissionFlagsBits
+} from "@/typings";
+
+type Item = ApiV1GuildsChannelsGetResponse | ApiV1GuildsRolesGetResponse;
+type PermissionNames = keyof typeof PermissionFlagsBits | "RoleRanking";
+
+function parsePermissions(permissions: number, required: PermissionNames[]) {
+    if (permissions === -1 && required.includes("RoleRanking")) return ["Role is above NotificationBot"];
+
+    return required
+        .filter((perm) => perm !== "RoleRanking")
+        .map((perm) => ((permissions & PermissionFlagsBits[perm as keyof typeof PermissionFlagsBits]) === 0 ? perm : false))
+        .filter(Boolean);
+}
+
+export function createSelectableItems<T extends Item>(
+    items: T[] | undefined,
+    requiredPermissions?: PermissionNames[],
+    allowedTypes: ChannelType[] = [ChannelType.GuildText, ChannelType.GuildAnnouncement]
+) {
+    if (!items?.length) return [];
+
+    if (requiredPermissions === undefined && "type" in items[0]) {
+        requiredPermissions = ["ViewChannel", "SendMessages", "EmbedLinks"];
+    }
+
+    return items
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .filter((item) => ("type" in item ? allowedTypes.includes(item.type) : true))
+        .map((item) => ({
+            icon: getIconByType("type" in item ? item.type : -1),
+            name: item.name,
+            value: item.id,
+            color: "color" in item ? item.color : undefined,
+            error:
+        "permissions" in item ? parsePermissions(item.permissions, requiredPermissions || []).join(", ") : undefined
+        }));
+}
+
+export function createSelectableEmojiItems(emojis: ApiV1GuildsEmojisGetResponse[] = []) {
+    return [
+        { icon: "👋", name: "Hello", value: "👋" },
+        { icon: "🎉", name: "Party", value: "🎉" },
+        { icon: "❤️", name: "Heart", value: "❤️" },
+        { icon: "🔥", name: "Fire", value: "🔥" },
+        { icon: "👍", name: "Thumbs Up", value: "👍" },
+        { icon: "😎", name: "Cool", value: "😎" },
+        { icon: "🤖", name: "Robot", value: "🤖" },
+        { icon: "✨", name: "Sparkles", value: "✨" },
+        { icon: "💯", name: "Hundred", value: "💯" },
+        { icon: "📢", name: "Announcement", value: "📢" },
+        ...emojis
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((c) => ({
+                icon: (
+                    <Image
+                        src={`https://cdn.discordapp.com/emojis/${c.id}.webp?size=64&quality=lossless`}
+                        className="rounded-md h-6 w-6"
+                        alt={c.name}
+                        height={64}
+                        width={64}
+                    />
+                ),
+                name: c.name.replace(/-|_/g, " "),
+                value: c.id
+            }))
+    ];
+}
+
+function getIconByType(type: ChannelType | -1) {
+    switch (type) {
+        case ChannelType.GuildVoice:
+            return <HiVolumeUp />;
+        case ChannelType.GuildCategory:
+            return <HiMenuAlt2 />;
+        case ChannelType.GuildAnnouncement:
+            return <HiNewspaper />;
+        case -1:
+            return <HiAtSymbol />;
+        default:
+            return <HiHashtag />;
+    }
+}

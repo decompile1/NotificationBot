@@ -1,0 +1,9 @@
+services:
+  tts:
+    container_name: notificationbot-images
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5050:5000"

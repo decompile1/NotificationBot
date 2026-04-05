@@ -1,0 +1,1 @@
+export const filterDuplicates = (strings: string[]) => [...new Set(strings)];
