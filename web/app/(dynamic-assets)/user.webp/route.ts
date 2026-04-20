@@ -3,7 +3,7 @@ import { getUser } from "@/lib/discord/user";
 export const revalidate = 691200; // 8 days
 
 export async function GET() {
-    const user = await getUser("1255569584925315205");
+    const user = await getUser("920487197046607872");
 
     const avatar = await fetch(user?.avatarUrl
         ? user.avatarUrl + "?size=256"
