@@ -121,7 +121,6 @@ function NoScript() {
 
 async function NavBar({ className }: { className?: string; }) {
     const jar = await cookies();
-
     interface Linktypes {
         name: string;
         hash: string;
@@ -136,21 +135,18 @@ async function NavBar({ className }: { className?: string; }) {
     return (
         <nav
             className={cn(
-                // 1. Position & Layout
                 "fixed top-0 left-1/2 -translate-x-1/2 z-999",
                 "flex items-center",
                 "w-[95%] sm:w-[92%] lg:w-[85%]",
-                "h-16 sm:h-20 mt-6", // Increased height and top margin
+                "h-16 sm:h-20 mt-6",
                 "px-6 md:px-10",
-                "rounded-3xl", // Larger rounding for larger bar
+                "rounded-3xl",
 
-                // 2. Glassmorphism Styles
                 "bg-black/30",
                 "backdrop-blur-2xl",
                 "backdrop-saturate-150",
                 "border border-white/10",
 
-                // 3. Shadow for depth
                 "shadow-[0_12px_40px_0_rgba(0,0,0,0.4)]",
 
                 className
@@ -161,7 +157,7 @@ async function NavBar({ className }: { className?: string; }) {
                     <Image
                         src="/bot.webp"
                         alt="Logo"
-                        width={40} // Increased logo size
+                        width={40}
                         height={40}
                         className="w-10 h-10 md:w-12 md:h-12"
                     />
@@ -174,14 +170,13 @@ async function NavBar({ className }: { className?: string; }) {
             <div className="flex-1" />
 
             <div className="flex items-center gap-4 md:gap-8">
-                <ul className="flex items-center gap-1 sm:gap-2">
+                <ul className="flex items-center gap-1 sm:gap-2 mx-auto">
                     {links.map((link) => (
                         <Link
                             key={link.hash}
                             className={cn(
                                 "px-4 py-2 rounded-xl transition-all duration-200",
                                 "text-sm md:text-base font-medium text-neutral-300",
-                                // Hover background instead of text color
                                 "hover:bg-white/10 hover:text-white",
                                 link.name === "Premium" && "hidden sm:inline-flex"
                             )}

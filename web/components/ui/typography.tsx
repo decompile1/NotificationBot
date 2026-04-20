@@ -19,7 +19,7 @@ export function Anchor({ className, prefetch, target, children, ...props }: Reac
 
 export function Code({ className, children, ...props }: { children: React.ReactNode; } & React.HTMLAttributes<HTMLElement>) {
     return (
-        <code className={cn("font-mono bg-red-900 text-primary-foreground py-0.5 px-1.5 rounded-sm select-all", className)} {...props}>
+        <code className={cn("font-mono text-sm bg-white/5 text-red-400 border border-white/10 py-0.5 px-2 rounded-md select-all", className)} {...props}>
             {children}
         </code>
     );

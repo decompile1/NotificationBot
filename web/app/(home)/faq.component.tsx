@@ -59,7 +59,7 @@ const data = [
                         <Anchor href="/add">Invite NotificationBot</Anchor> to your server
                     </li>
                     <li>
-                        Go to the <Anchor href="/profile">Dashboard</Anchor>, find your server and click {"\""}manage{"\""}.
+                        Go to the <Anchor href="/dashboard">Dashboard</Anchor>, find your server and click {"\""}manage{"\""}.
                     </li>
                     <li>
                         Go to the tab that says {"\""}Third Party Notifications{"\""}

@@ -11,36 +11,6 @@ const router = new Hono();
 
 const DISCORD_ENDPOINT = config.discordEndpoint;
 
-import { getDmNotification } from "@/src/db/models/dmnotifications";
-
-import dmnRouter from "./dmnotifications";
-router.route("/dmnotifications", dmnRouter);
-
-router.get("/", async (c) => {
-    try {
-        const user = c.get("user");
-
-        if (!user?.access_token) {
-            return httpError(HttpErrorMessage.MissingAccess);
-        }
-
-        const config = await getDmNotification(user.id);
-
-        return c.json({
-            dmnotifications: {
-                enabled: config?.enabled ?? false,
-                embedcolor: config?.embedcolor ?? 0,
-                source: config?.source ?? null,
-                thumbnail: config?.thumbnail ?? null,
-                text: config?.text ?? "You got a new notification from"
-            }
-        });
-    } catch (error) {
-        console.error("Error fetching user dmnotifications configuration:", error);
-        return httpError(HttpErrorMessage.InternalServerError);
-    }
-});
-
 router.get("/guilds", async (c) => {
     const user = c.get("user");
     if (!user?.access_token) {

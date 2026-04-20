@@ -46,8 +46,8 @@ export const generateMetadata = (): Metadata => {
 
 export default function Home() {
     return (
-        <div>
-            <h2 className="text-2xl font-medium text-neutral-200">Team 💡</h2>
+        <div className="mt-20">
+            <h2 className="text-2xl font-medium text-neutral-200">Team</h2>
             <div className="max-w-xl mt-1 mb-2">
                 Some information about the people contributing to the NotificationBot project
             </div>
@@ -94,7 +94,7 @@ export default function Home() {
 
             <h2 className="text-2xl font-medium text-neutral-200">Discord Community <BsDiscord className="inline ml-1 mb-1 text-[#5865f2]" /></h2>
             <div className="max-w-xl mt-1">
-                Join our Discord server
+                Join our Discord Server
             </div>
 
             <div className="mt-2 py-5 md:w-1/2">

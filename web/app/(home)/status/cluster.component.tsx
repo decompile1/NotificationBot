@@ -1,6 +1,5 @@
-import Image from "next/image";
 import type { ReactNode } from "react";
-import { HiLightningBolt } from "react-icons/hi";
+import { HiLightningBolt, HiOutlineStatusOnline, HiXCircle } from "react-icons/hi";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/utils/cn";
@@ -55,20 +54,26 @@ export function Cluster(cluster: ApiCluster) {
 }
 
 function Icon({ theping }: { theping: number; }) {
-    const emoteId = theping > 0
-        ? "1432166917778702497"
-        : "1432166917778702497";
-
-    return (
-        <Image
-            alt="online"
-            className="size-7"
-            src={`https://cdn.discordapp.com/emojis/${emoteId}.webp?size=32&quality=lossless`}
-            width={32}
-            height={32}
-        />
-    );
+    return theping > 0
+        ? <HiOutlineStatusOnline className="size-5 text-green-400 shrink-0" />
+        : <HiXCircle className="size-5 text-red-400 shrink-0" />;
 }
+
+// function Icon({ theping }: { theping: number; }) {
+//     const emoteId = theping > 0
+//         ? "1432166917778702497"
+//         : "1432166917778702497";
+
+//     return (
+//         <Image
+//             alt="online"
+//             className="size-7"
+//             src={`https://cdn.discordapp.com/emojis/${emoteId}.webp?size=32&quality=lossless`}
+//             width={32}
+//             height={32}
+//         />
+//     );
+// }
 
 function Row({ name, children, className }: { name: string; children: ReactNode; className?: string; }) {
     return (

@@ -48,7 +48,7 @@ router.post("/", async (c) => {
 
         return c.json(res);
     } catch (error) {
-        console.error("Error sending webhook to Discord:", error);
+        return httpError(HttpErrorMessage.InternalServerError);
     }
 });
 

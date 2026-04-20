@@ -15,18 +15,6 @@ export async function up(db: Kysely<any>): Promise<void> {
       .execute();
 
   await db.schema
-      .createTable('dmnotifications')
-      .addColumn('user_id', 'varchar', col => col.primaryKey())
-      .addColumn('enabled', 'boolean')
-      .addColumn('embedcolor', 'integer')
-      .addColumn('source', 'varchar')
-      .addColumn('thumbnail', 'varchar')
-      .addColumn('text', 'varchar')
-      .addColumn('created_at', 'timestamp', col => col.notNull().defaultTo(sql`now()`))
-      .addColumn('updated_at', 'timestamp', col => col.notNull().defaultTo(sql`now()`))
-      .execute();
-
-  await db.schema
       .createTable('followupdates')
       .addColumn('guild_id', 'varchar', col => col.primaryKey())
       .addColumn('channel_id', 'varchar')
@@ -113,7 +101,6 @@ export async function down(db: Kysely<any>): Promise<void> {
   await db.schema.dropTable('reviews').execute();
   await db.schema.dropTable('notifications').execute();
   await db.schema.dropTable('followupdates').execute();
-  await db.schema.dropTable('dmnotifications').execute();
   await db.schema.dropTable('bye').execute();
   await db.schema.dropTable('shard').execute();
 }

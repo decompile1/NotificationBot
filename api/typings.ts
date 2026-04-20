@@ -84,7 +84,6 @@ export interface ApiV1GuildsTopmembersGetResponse {
   avatar: string | null;
   bot: true;
   emoji: string | null;
-  // activity: ApiV1UsersMeGetResponse["activity"] & { formattedVoicetime: string };
 }
 
 export interface ApiV1GuildsTopmembersPaginationGetResponse {
@@ -226,16 +225,6 @@ export interface ApiV1GuildsModulesPassportGetResponse {
   alsoFailIf: "disposableEmailAddress"[];
 }
 
-export interface ApiV1UsersMeGetResponse {
-  dmnotifications?: {
-    enabled?: boolean;
-    embedcolor?: number;
-    source?: string | null;
-    thumbnail?: string | null;
-    text?: string | null;
-  };
-}
-
 export interface ApiV1UsersMeConnectionsSpotifyGetResponse {
   displayName: string;
   avatar: string | null;
@@ -309,12 +298,6 @@ export interface ApiV1UsersGetResponse {
   bannerUrl: string | null;
   voteCount: number;
   likeCount: number;
-
-  // activity: Required<ApiV1UsersMeGetResponse>["activity"];
-  // guilds: {
-  //   guildId: string;
-  //   activity: Required<ApiV1UsersMeGetResponse>["activity"];
-  // }[];
 }
 
 export enum NotificationType {

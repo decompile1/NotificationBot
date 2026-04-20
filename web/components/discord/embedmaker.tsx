@@ -277,7 +277,7 @@ export default function MessageCreatorEmbed({
                                 </DiscordMessage>
                             </div>
                         </div>
-                        <div className="text-sm m-1 text-neutral-500">Preview UI might be a little bit off**</div>
+                        <div className="text-sm m-1 text-neutral-500">Preview MAY be off***</div>
                     </div>
                 )}
             </div>

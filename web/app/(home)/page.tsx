@@ -1,17 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsDiscord } from "react-icons/bs";
-import { HiArrowNarrowDown, HiPlus } from "react-icons/hi";
+import { BsDiscord, BsSlashCircleFill } from "react-icons/bs";
+import { FaDoorOpen } from "react-icons/fa6";
+import { HiArrowNarrowDown } from "react-icons/hi";
 import { HiArrowRight, HiCheck } from "react-icons/hi";
-import { LuMailPlus } from "react-icons/lu";
+import { LuBellElectric, LuGrid2X2Plus } from "react-icons/lu";
+import { RiRobot2Line } from "react-icons/ri";
 
 import DiscordMessageEmbed from "@/components/discord/embed";
 import { DiscordMarkdown } from "@/components/discord/markdown";
 import DiscordMessage from "@/components/discord/message";
 import { AvatarGroup, UserAvatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button, LinkButton } from "@/components/ui/button";
-import { Code } from "@/components/ui/typography";
+import { Button } from "@/components/ui/button";
 import { defaultFetchOptions } from "@/lib/api";
 import ArrowPic from "@/public/arrow.webp";
 import thumbnail from "@/public/assets/thumbnail.png";
@@ -68,34 +69,34 @@ export default async function Home() {
                         </span>
                     </h1>
 
-                    <span className="text-lg font-medium max-w-152 mb-4 leading-tight">
+                    <span className="text-2xl font-medium max-w-152 mb-4 leading-tight">
                         We introduce you to fully customizable notifications from your favorite platforms,
                         a full-on welcoming system, and slash commands!
                     </span>
 
                     <div className="space-y-4">
                         <div className="flex flex-wrap gap-2">
-                            <Button asChild>
+                            <Button asChild size="lg">
                                 <Link
                                     href="https://discord.com/oauth2/authorize?client_id=1366507117044957276"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-2"
                                 >
-                                    <HiPlus className="w-5 h-5" />
+                                    <BsDiscord className="w-5 h-5" />
                                     Invite NotificationBot
                                 </Link>
                             </Button>
 
-                            <Button asChild>
+                            <Button asChild size="lg">
                                 <Link
-                                    href="/support"
+                                    href="/dashboard"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-2"
                                 >
-                                    <BsDiscord className="w-5 h-5" />
-                                    Support Server
+                                    <LuGrid2X2Plus className="w-5 h-5" />
+                                    Dashboard
                                 </Link>
                             </Button>
                         </div>
@@ -148,9 +149,9 @@ export default async function Home() {
                 </div>
             </div> */}
 
-            <div className="flex justify-center w-full mt-8 mb-90">
+            <div className="flex justify-center w-full mt-1 mb-10 md:mb-90">
                 <div className="flex flex-col items-center gap-2">
-                    <HiArrowNarrowDown className="w-8 h-8 text-neutral-400 animate-bounce" />
+                    <HiArrowNarrowDown className="w-8 h-8 text-white animate-bounce" />
                 </div>
             </div>
 
@@ -173,7 +174,7 @@ export default async function Home() {
                             <div className="mb-6 flex items-center justify-center size-12 rounded-xl bg-white/3 border border-white/8 shadow-inner relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-50" />
 
-                                <LuMailPlus className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                                <LuBellElectric className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
                             </div>
 
                             <h3 className={styles.h4}>Notifications from your favorite platforms</h3>
@@ -230,83 +231,11 @@ export default async function Home() {
 
                 <div>
                     <div className="flex flex-col md:flex-row-reverse gap-10 items-center">
-                        <div className="md:w-1/2">
-                            <div className="mb-6 flex items-center justify-center size-12 rounded-xl bg-white/3 border border-white/8 shadow-inner relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-50" />
-
-                                <LuMailPlus className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
-                            </div>
-
-                            <h3 className={styles.h4}>DM Notifications</h3>
-
-                            <div className="pt-6">
-                                For this to work, just make sure <Code>direct messages</Code> is turned on!
-
-                                <ol className="mt-4">
-                                    {[
-                                        "One configuration only for now"
-                                    ].map((name) => (
-                                        <li key={name} className="flex gap-1 items-center">
-                                            <HiCheck className="text-red-400" />
-                                            {name}
-                                        </li>
-                                    ))}
-                                </ol>
-                            </div>
-
-                            <div className="flex gap-2 mt-5">
-                                <Button asChild>
-                                    <Link
-                                        href="/profile/dmnotifications"
-                                        target="_blank"
-                                    >
-                                        <HiArrowRight />
-                                        Setup
-                                    </Link>
-                                </Button>
-                            </div>
-                        </div>
-
-                        <div className="bg-discord-gray w-full md:w-1/2 px-8 py-4 rounded-lg">
-                            <DiscordMessage
-                                mode={"DARK"}
-                                user={{
-                                    username: "decompile1",
-                                    avatar: "/user.webp",
-                                    bot: false
-                                }}
-                            >
-                                <DiscordMarkdown mode={"DARK"} text="Demo below!" />
-                            </DiscordMessage>
-
-                            <DiscordMessage {...messageProps()}>
-                                <DiscordMarkdown
-                                    mode="DARK"
-                                    text={"Hey **@decompile1**, you have a new notifications"}
-                                />
-                                <DiscordMessageEmbed
-                                    mode="DARK"
-                                    title="new notification from nyt"
-                                    color={0xFF0000}
-                                >
-                                    https://rss.nytimes.com/services/xml/rss/nyt/World.xml
-                                </DiscordMessageEmbed>
-
-                            </DiscordMessage>
-
-                            <span className="text-sm mt-1 opacity-75">
-                                Example message
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div className="flex flex-col md:flex-row-reverse gap-10 items-center">
                         <div className="md:w-1/2 flex flex-col items-start">
                             <div className="mb-6 flex items-center justify-center size-12 rounded-xl bg-white/3 border border-white/8 shadow-inner relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-50" />
 
-                                <LuMailPlus className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                                <FaDoorOpen className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
                             </div>
 
                             <h3 className={styles.h4}>Welcome System</h3>
@@ -350,7 +279,7 @@ export default async function Home() {
                             <div className="mb-6 flex items-center justify-center size-12 rounded-xl bg-white/3 border border-white/8 shadow-inner relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-50" />
 
-                                <LuMailPlus className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                                <RiRobot2Line className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
                             </div>
 
                             <h3 className={styles.h4}>Webhooks</h3>
@@ -408,7 +337,7 @@ export default async function Home() {
                             <div className="mb-6 flex items-center justify-center size-12 rounded-xl bg-white/3 border border-white/8 shadow-inner relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-50" />
 
-                                <LuMailPlus className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                                <BsSlashCircleFill className="size-6 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
                             </div>
 
                             <h3 className={styles.h4}>Slash commands</h3>
@@ -451,14 +380,17 @@ export default async function Home() {
                             it&apos;s completely free.
                         </p>
                     </div>
-                    <LinkButton
-                        href="/login"
-                        variant="default"
-                        size="lg"
-                        className="px-10 py-7 text-lg font-semibold bg-white text-black hover:bg-neutral-200 transition-all duration-300 rounded-full shadow-none"
-                    >
-                        Get Started Now
-                    </LinkButton>
+                    <Button asChild size="lg">
+                        <Link
+                            href="/dashboard"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2"
+                        >
+                            <BsDiscord className="w-5 h-5" />
+                            Get Started Now
+                        </Link>
+                    </Button>
                 </div>
             </section>
 

@@ -28,7 +28,7 @@ enum State {
 }
 
 export function ProfileHeader() {
-    const [state, setState] = useState<State>(State.Loading);
+    const [state, setState] = useState(State.Loading);
     const user = userStore((s) => s);
 
     useEffect(() => {
@@ -51,9 +51,9 @@ export function ProfileHeader() {
 
     if (state === State.Loading || !user) {
         return (
-            <div className="ml-auto flex items-center py-2 px-4">
-                <Skeleton className="rounded-full mr-2 size-[30px]" />
-                <Skeleton className="rounded-xl w-20 h-5" />
+            <div className="ml-auto flex items-center gap-2 py-2 px-3">
+                <Skeleton className="rounded-full size-8" />
+                <Skeleton className="rounded-lg w-20 h-4" />
             </div>
         );
     }
@@ -65,70 +65,75 @@ function Dropdown({ user }: { user: User; }) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <button
-                    className="ml-auto truncate flex hover:bg-background py-2 px-4 rounded-lg duration-200 items-center data-[state=open]:bg-background outline-none"
-                >
-                    <Avatar className="mr-2 border-2 border-blue-800 rounded-full w-7 h-7 sm:w-8 sm:h-8">
+                <button className="ml-auto flex items-center gap-2 py-1.5 px-3 rounded-xl border border-transparent hover:border-border hover:bg-card duration-150 outline-none data-[state=open]:border-border data-[state=open]:bg-card">
+                    <Avatar className="size-7 rounded-full ring-2 ring-red-800">
                         <AvatarImage
                             alt={user.username}
                             src={user.avatarHash ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatarHash}?size=96` : "/discord.webp"}
                         />
                     </Avatar>
-
-                    <p className="mr-1 relative bottom-px truncate block text-primary-foreground font-medium tracking-tight text-xs sm:text-sm">{user.displayName || user.username}</p>
-                    <HiChevronDown />
+                    <span className="text-sm font-medium text-neutral-200 truncate max-w-28">
+                        {user.displayName || user.username}
+                    </span>
+                    <HiChevronDown className="text-muted-foreground size-4" />
                 </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className='w-56 scale-120 relative top-9 right-5' align="end">
-                <DropdownMenuLabel className='flex items-center gap-3'>
-                    <Avatar className="border-2 border-blue-800 rounded-full">
+
+            <DropdownMenuContent className="w-56 mt-2" align="end">
+                <DropdownMenuLabel className="flex items-center gap-3 p-3">
+                    <Avatar className="size-9 rounded-full ring-2 ring-red-800">
                         <AvatarImage
                             alt={user.username}
                             src={user.avatarHash ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatarHash}?size=96` : "/discord.webp"}
                         />
                     </Avatar>
-                    <div className='flex flex-col pb-0.5 truncate'>
-                        <span className='text-popover-foreground truncate'>{user.displayName || user.username}</span>
-                        <span className='text-muted-foreground text-xs truncate'>{user.email}</span>
+                    <div className="flex flex-col truncate">
+                        <span className="text-sm font-medium text-popover-foreground truncate">
+                            {user.displayName || user.username}
+                        </span>
+                        <span className="text-xs text-muted-foreground truncate">{user.email}</span>
                     </div>
                 </DropdownMenuLabel>
+
                 <DropdownMenuSeparator />
+
                 <DropdownMenuGroup>
                     <DropdownMenuItem asChild>
-                        <Link href="/profile">
-                            <HiIdentification />
-                            Profile
+                        <Link href="/dashboard" className="flex items-center gap-2">
+                            <HiIdentification className="size-4" />
+                            Dashboard
                         </Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
+
                 <DropdownMenuSeparator />
+
                 <DropdownMenuGroup>
                     <DropdownMenuItem asChild>
-                        <Link href="/support">
-                            <HiSupport />
+                        <Link href="/support" className="flex items-center gap-2">
+                            <HiSupport className="size-4" />
                             Support
                         </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                        <Link href="/docs/index">
-                            <HiBookOpen />
+                        <Link href="/docs/index" className="flex items-center gap-2">
+                            <HiBookOpen className="size-4" />
                             Documentation
                         </Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
+
                 <DropdownMenuSeparator />
+
                 <DropdownMenuGroup>
-                    <DropdownMenuItem
-                        asChild
-                        className="text-red-400"
-                    >
+                    <DropdownMenuItem asChild className="text-red-400 focus:text-red-400">
                         <button
-                            className="w-full"
+                            className="w-full flex items-center gap-2"
                             onClick={() => {
                                 window.location.href = "/login?logout=true";
                             }}
                         >
-                            < HiLogout />
+                            <HiLogout className="size-4" />
                             Logout
                         </button>
                     </DropdownMenuItem>

@@ -20,7 +20,7 @@ export const members = [
         social: "https://github.com/decompile1"
     },
     {
-        id: "1249812467861684239",
+        id: "920487197046607872",
         team: TeamType.Donator
     }
 ] as const;

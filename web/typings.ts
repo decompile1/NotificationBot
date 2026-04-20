@@ -170,16 +170,6 @@ export interface ApiV1GuildsModulesPassportGetResponse {
   alsoFailIf: "disposableEmailAddress"[];
 }
 
-export interface ApiV1UsersMeGetResponse {
-  dmnotifications?: {
-    enabled?: boolean;
-    embedcolor?: number;
-    source?: string | null;
-    thumbnail?: string | null;
-    text?: string | null;
-  };
-}
-
 export interface ApiV1UsersMeConnectionsSpotifyGetResponse {
   displayName: string;
   avatar: string | null;
@@ -253,12 +243,6 @@ export interface ApiV1UsersGetResponse {
   bannerUrl: string | null;
   voteCount: number;
   likeCount: number;
-
-  // activity: Required<ApiV1UsersMeGetResponse>["activity"];
-  // guilds: {
-  //   guildId: string;
-  //   activity: Required<ApiV1UsersMeGetResponse>["activity"];
-  // }[];
 }
 
 export enum NotificationType {

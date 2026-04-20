@@ -26,17 +26,6 @@ export interface ByeTable {
     updated_at: string;
 }
 
-export interface DmNotificationsTable {
-    user_id: string;
-    enabled: boolean | null;
-    embedcolor: number | null;
-    source: string | null;
-    thumbnail: string | null;
-    text: string | null;
-    created_at: string;
-    updated_at: string;
-}
-
 export interface FollowUpdatesTable {
     guild_id: string;
     channel_id: string | null;
@@ -159,7 +148,6 @@ export interface ShardTable {
 
 export interface Database {
     bye: ByeTable;
-    dmnotifications: DmNotificationsTable;
     followupdates: FollowUpdatesTable;
     notifications: NotificationsTable;
     reviews: ReviewsTable;

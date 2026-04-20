@@ -63,7 +63,7 @@ export default async function RootLayout({ params, children }: Props) {
 
             <div className="flex flex-col lg:flex-row gap-6 mt-5 min-h-[63vh]">
                 <nav className="w-full lg:w-1/4 space-y-2">
-                    <ul className="space-y-1 mb-4 bg-red p-2 rounded-md border border-red-600">
+                    <ul className="space-y-1 mb-4 bg-red p-2 rounded-md border border-border">
                         {metadata.pages.map((page, i) => (
                             <NavButton key={"nav-" + page.file + i} page={page} />
                         ))}
@@ -77,7 +77,7 @@ export default async function RootLayout({ params, children }: Props) {
                         <HiUserAdd />
                         Invite NotificationBot
                     </LinkButton>
-                    <LinkButton className="w-full justify-start!" href="/profile" target="_blank">
+                    <LinkButton className="w-full justify-start!" href="/dashboard" target="_blank">
                         <HiViewGridAdd />
                         Dashboard
                     </LinkButton>
@@ -107,8 +107,8 @@ function NavButton({ page }: { page: (typeof metadata.pages)[0]; }) {
 
     return (
         <li>
-            <LinkButton className="w-full justify-start! bg-transparent h-[30px]" href={`/docs/${file}`} size="sm">
-                <span className="mr-[2px]">{icon}</span>
+            <LinkButton className="w-full justify-start! bg-transparent h-[30px] border border-border hover:border-red-600 transition-colors duration-150" href={`/docs/${file}`} size="sm">
+                <span className="mr-0.5">{icon}</span>
                 {name}
             </LinkButton>
         </li>

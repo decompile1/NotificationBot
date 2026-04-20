@@ -20,18 +20,18 @@ enum State {
 
 export default function Home() {
     const params = useParams();
-    const [state, setState] = useState<State>(State.Idle);
+    const [state, setState] = useState(State.Idle);
     const [error, setError] = useState<string | null>(null);
 
-    const [open] = useState<boolean>(true);
+    const [open] = useState(true);
     const [mode, setMode] = useState<"DARK" | "LIGHT">("DARK");
 
     const [username, setUsername] = useState("");
     const [webhookurl, setWebhookurl] = useState("");
     const [webhookavatar, setWebhookavatar] = useState("");
     const [content, setContent] = useState("");
-    const [embed, setEmbed] = useState<string>(JSON.stringify({}));
-    const [embedfooter, setEmbedfooter] = useState<string>(JSON.stringify({}));
+    const [embed, setEmbed] = useState(JSON.stringify({}));
+    const [embedfooter, setEmbedfooter] = useState(JSON.stringify({}));
 
     const modeToggle = (
         <div
@@ -40,18 +40,18 @@ export default function Home() {
                 "flex gap-1 text-neutral-400 rounded-md overflow-hidden"
             )}
         >
-            <button
+            <Button
                 onClick={() => setMode("DARK")}
                 className={cn("py-2 px-3 rounded-md", mode === "DARK" ? "bg-foreground" : "hover:bg-foreground-100-alpha")}
             >
                 <BiMoon className="h-5 w-5" />
-            </button>
-            <button
+            </Button>
+            <Button
                 onClick={() => setMode("LIGHT")}
                 className={cn("py-2 px-3 rounded-md", mode === "LIGHT" ? "bg-foreground-100" : "hover:bg--alpha")}
             >
                 <BiSun className="h-5 w-5" />
-            </button>
+            </Button>
         </div>
     );
 
@@ -96,7 +96,7 @@ export default function Home() {
             <div
                 className={cn(
                     "mt-8 mb-4 border-2 dark:border-foreground border-foreground-100 rounded-xl md:px-4 md:pb-4 px-2 py-2",
-                    error && "outline outline-red-500 outline-1"
+                    error && "outline outline-red-500"
                 )}
             >
                 <div className="text-lg py-2 dark:text-neutral-700 text-neutral-300 font-medium px-2">Discord Webhook</div>
@@ -233,7 +233,7 @@ export default function Home() {
                                 </DiscordMessage>
                             </div>
                         </div>
-                        <div className="text-sm m-1 text-neutral-500">Preview UI might be a little bit off**</div>
+                        <div className="text-sm m-1 text-neutral-500">Preview MAY be buggy***</div>
                     </div>
                 )}
             </div>
@@ -241,7 +241,7 @@ export default function Home() {
             <div className="flex relative bottom-3">
                 <div className="ml-auto mb-2">
                     {error && <div className="ml-auto text-red-500 text-sm">{error}</div>}
-                    {state === State.Success && <div className="ml-auto text-green-500 text-sm">Saved</div>}
+                    {state === State.Success && <div className="ml-auto text-green-500 text-sm">Sent</div>}
                 </div>
             </div>
         </>
