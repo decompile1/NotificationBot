@@ -162,7 +162,7 @@ async function NavBar({ className }: { className?: string; }) {
                         className="w-10 h-10 md:w-12 md:h-12"
                     />
                     <span className="hidden xs:inline text-lg md:text-xl font-bold tracking-tight">
-                        tickets
+                        NotificationBot
                     </span>
                 </Link>
             </div>
