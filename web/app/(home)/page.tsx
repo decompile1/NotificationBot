@@ -165,7 +165,7 @@ export default async function Home() {
                         Features
                     </span>
                     <h2 className="text-3xl md:text-4xl font-bold text-white max-w-3xl leading-tight">
-                        Explore the features that make NotificationBot the best ticket bot for Discord communities.
+                        Explore the features that make NotificationBot the best notification bot for Discord communities.
                     </h2>
                 </div>
                 <div>
