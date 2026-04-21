@@ -180,7 +180,7 @@ export default async function Home() {
                             <h3 className={styles.h4}>Notifications from your favorite platforms</h3>
 
                             <Badge
-                                className="mb-2"
+                                className="mb-2 mt-2"
                                 variant="flat"
                                 radius="rounded"
                             >
@@ -240,6 +240,15 @@ export default async function Home() {
 
                             <h3 className={styles.h4}>Welcome System</h3>
 
+                            <Badge
+                                className="mb-2 mt-2"
+                                variant="flat"
+                                radius="rounded"
+                            >
+                                <HiCheck />
+                                Free
+                            </Badge>
+
                             <div className="pt-6">
                                 Automatic messages for new and leaving members. Supports direct messages.
                             </div>
@@ -283,6 +292,15 @@ export default async function Home() {
                             </div>
 
                             <h3 className={styles.h4}>Webhooks</h3>
+
+                            <Badge
+                                className="mb-2 mt-2"
+                                variant="flat"
+                                radius="rounded"
+                            >
+                                <HiCheck />
+                                Free
+                            </Badge>
 
                             <div className="pt-6">
                                 Easily send a message with a webhook right in the dashboard!
@@ -341,6 +359,15 @@ export default async function Home() {
                             </div>
 
                             <h3 className={styles.h4}>Slash commands</h3>
+
+                            <Badge
+                                className="mb-2 mt-2"
+                                variant="flat"
+                                radius="rounded"
+                            >
+                                <HiCheck />
+                                Free
+                            </Badge>
 
                             <div className="pt-6">
                                 For now we only have 6 slash commands, but we will add more soon!
